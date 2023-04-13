@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  html{
+    font-family: 'Manrope', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body{
+    overflow: hidden;
+  }
+
+  main{
+    @apply bg-[url]    
+  }
+  .nav-link{
+    @apply relative text-lg text-custom-grey
+     cursor-pointer p-3 pb-2 after:content-[''] after:absolute after:bg-custom-mid after:h-0.5 after:bottom-0 after:w-0 after:left-0 hover:after:transition-all hover:after:w-full hover:after:duration-300 sharp-nav:text-custom-deep
+  }
+}
