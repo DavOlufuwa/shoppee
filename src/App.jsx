@@ -1,7 +1,9 @@
 import { createTheme, ThemeProvider } from '@mui/material'
 import About from './components/About'
+import Blog from './components/Blog'
 import Header from './components/Header'
 import Properties from './components/Properties'
+import Testimonials from './components/Testimonials'
 
 
 const theme = createTheme({
@@ -18,7 +20,9 @@ function App() {
       <div className="App">
         <Header/>
         <About />
-        <Properties/>
+        <Properties />
+        <Blog />
+        <Testimonials />
       </div>
     </ThemeProvider>
   )

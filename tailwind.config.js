@@ -74,7 +74,8 @@ export default {
           'mid':'#029278',
           'deep':'#001B17',
           'background':'#F0FFFC',
-          'grey':'#758280'
+          'grey':'#758280',
+          'buttonbg':'#EAFDF9'
         }
       },
       screens:{
