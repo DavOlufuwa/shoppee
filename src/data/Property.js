@@ -1,7 +1,7 @@
-export const Properties = [
+export const Property = [
   {
     id:1,
-    img:"",
+    img:"./src/assets/images/property-one.png",
     address:"7 Herbert Maculey, Lagos.",
     options:[
       "3 Bedrooms",
@@ -12,7 +12,7 @@ export const Properties = [
   },
   {
     id:2,
-    img:"",
+    img:"./src/assets/images/property-two.png",
     address:"9 Bode Thomas, Lagos.",
     options:[
       "3 Bedrooms",
@@ -23,7 +23,7 @@ export const Properties = [
   },
   {
     id:3,
-    img:"",
+    img:"./src/assets/images/property-three.png",
     address:"2 Ikate Maculey, Lagos.",
     options:[
       "3 Bedrooms",
