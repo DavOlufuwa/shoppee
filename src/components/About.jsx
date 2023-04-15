@@ -29,7 +29,7 @@ const About = () => {
                 component="img"
                 image={info.img}
                 sx={{height: "16px"}}
-                className='w-16 h-0 ml-3'
+                className='w-16 ml-3'
               />
               <CardContent>
               <p className='text-2xl font-bold mr-2 my-3.5'>{info.title}</p>
