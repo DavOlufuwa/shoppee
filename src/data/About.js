@@ -3,7 +3,7 @@ export const AboutUs = [
     id:1, 
     title:"Property Insurance",
     information:"We offer our customer property protection of liability coverage and insurance for their better life.",
-    img:"./src/assets/icons-large/property_insurance.svg"
+    img:"../assets/icons-large/property_insurance.svg"
   },
   {
     id:2,
