@@ -27,8 +27,8 @@ const About = () => {
             <Card key={info.id} className='shadow-none bg-transparent'>
               <CardMedia
                 component="img"
+                height="200"
                 image={info.img}
-                sx={{height: "100px"}}
                 className='w-16 ml-3'
               />
               <CardContent>
