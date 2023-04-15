@@ -30,7 +30,7 @@ const About = () => {
                 // image={info.img}
                 image="../assets/icons-large/best_price.svg"
                 className='w-16 h-auto ml-3'
-              />
+              ></CardMedia>
               <CardContent>
               <p className='text-2xl font-bold mr-2 my-3.5'>{info.title}</p>
               <p className='text-base'>{info.information}</p> 
