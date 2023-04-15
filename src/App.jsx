@@ -1,6 +1,7 @@
 import { createTheme, ThemeProvider } from '@mui/material'
 import About from './components/About'
 import Blog from './components/Blog'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import Properties from './components/Properties'
 import Testimonials from './components/Testimonials'
@@ -23,6 +24,7 @@ function App() {
         <Properties />
         <Blog />
         <Testimonials />
+        <Footer />
       </div>
     </ThemeProvider>
   )

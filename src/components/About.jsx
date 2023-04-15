@@ -5,7 +5,7 @@ import { AboutUs } from '../data/About'
 
 const About = () => {
   return (
-    <div className='px-6 py-16 flex flex-col gap-20 tablet:px-16 palmtop:flex-row palmtop:gap-10'>
+    <div className='px-6 py-16 flex flex-col gap-20 tablet:px-16 palmtop:flex-row palmtop:gap-10 laptop:px-32'>
       <section className='palmtop:w-full'>
         <Card className='bg-gray-100 border-none shadow-none rounded-lg'>
           <CardContent className='pl-6'>

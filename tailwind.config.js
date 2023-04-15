@@ -75,6 +75,7 @@ export default {
           'deep':'#001B17',
           'background':'#F0FFFC',
           'grey':'#758280',
+          'footer':'#014137',
           'buttonbg':'#EAFDF9'
         }
       },

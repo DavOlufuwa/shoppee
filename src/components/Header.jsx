@@ -14,9 +14,9 @@ const Header = () => {
         <div>
           <div className='flex items-center gap-1'>
             <div className='p-1 border-2 rounded-full border-custom-mid'>
-              <img src={Logo}/>
+              <a href='#'><img src={Logo}/></a>
             </div>
-            <p className='text-xl font-bold text-custom-mid'>PropertyForMe</p>
+              <p className='text-xl font-bold text-custom-mid'><a href="#">PropertyForMe</a></p>
           </div>
         </div>
         <nav className={`flex items-center gap-12 transition duration-300 sharp-nav:hidden sharp-nav:z-60 sharp-nav:absolute sharp-nav:right-0 sharp-nav:top-0 sharp-nav:bg-custom-light sharp-nav:min-h-full sharp-nav:pt-24 sharp-nav:px-14 sharp-nav:gap-16 sharp-nav:translate-x-full sharp-nav:z-40  ${menu && 'sharp-nav:block sharp-nav:translate-x-0 '}`}>
@@ -38,13 +38,13 @@ const Header = () => {
           <MenuOpen fontSize='large' sx={{color:"#029278"}} />
         </div>
       </header>
-      <main className="px-5 py-2 bg-hero bg-center bg-no-repeat bg-cover laptop:bg-right laptop:bg-contain ">
+      <main className="px-5 py-2 bg-hero bg-center bg-no-repeat bg-cover laptop:bg-right laptop:bg-contain laptop:px-32">
         <section>
-          <section className='text-4xl text-custom-deep py-5 pb-7'>
-            Buy, Rent, or Sell your Property from anywhere
+          <section className='text-4xl text-custom-deep py-5 pb-7 tablet:w-4/5 palmtop:w-1/2 laptop:w-2/5 laptop:pr-16 laptop:leading-snug'>
+            Buy, Rent, or Sell your Property from anywhere 
           </section>
-          <p className='text-base'>
-            find your home within any location, from reliable agennts while properties are showcased
+          <p className='text-base tablet:w-1/2 palmtop:'>
+            Find your home within any location, from reliable agents while properties are showcased
           </p>
         </section>
         <ButtonGroup variant='none' className=' rounded-ee-none rounded-es-none border-b-4 mt-3 border-green-100 text-custom-deep'>
@@ -52,21 +52,21 @@ const Header = () => {
           <Button className='nav-link text-sm capitalize'>Buy</Button>
           <Button className='nav-link text-sm capitalize'>Sell</Button>
         </ButtonGroup>
-        <div>
-          <Card className='rounded-ee-none rounded-es-none rounded-ss-sm rounded-se-sm'>
-            <CardContent>
-              <p className='text-base text-custom-grey'>Location</p>
+        <div className='palmtop:flex'>
+          <Card className='rounded-ee-none shadow-none rounded-es-none rounded-ss-sm rounded-se-sm'>
+            <CardContent className='px-6'>
+              <p className='text-base font-[500] text-custom-grey'>Location</p>
               <div className='flex items-center text-xl gap-4'>Lekki, Lagos <span><FmdGoodOutlined sx={{color:"#808080"}}/></span></div>
             </CardContent>
           </Card>
-          <Card className='rounded-ss-none  rounded-se-none rounded-ee-none rounded-es-none  ' >
-            <CardContent>
-              <p className='text-base text-custom-grey'>When</p>
+          <Card className='rounded-ss-none shadow-none rounded-se-none rounded-ee-none rounded-es-none border-b-75 ' >
+            <CardContent className='px-6'>
+              <p className='text-base font-[500] text-custom-grey'>When</p>
               <div className='flex items-center text-xl gap-4'>Select Move-in Date<span><CalendarMonthOutlined sx={{color:"#808080"}}/></span></div>
             </CardContent>
           </Card>
-          <Card className='py-3'>
-            <CardActions>
+          <Card className='py-3 rounded-ss-none'>
+            <CardActions className='px-6'>
               <Button variant='contained' className='py-3 px-8 rounded-lg bg-custom-mid capitalize shadow-none'>Browse Properties</Button>
             </CardActions>
           </Card>
@@ -76,10 +76,9 @@ const Header = () => {
             <CardMedia
               component="img"
               image={Customers}
-              className='w-20'
-
+              className='w-16'
             />
-            <CardContent>
+            <CardContent className='px-0'>
               <p className='text-xl text-custom-mid'>500+ Customers</p>
               <p className='text-base text-custom-deep'>believe in our service</p>
             </CardContent>
@@ -88,9 +87,9 @@ const Header = () => {
             <CardMedia
               component="img"
               image={Properties}
-              className='w-20'
+              className='w-16'
             />
-            <CardContent>
+            <CardContent className='px-0'>
               <p className='text-xl text-custom-mid'>10k+ properties</p>
               <p className='text-base text-custom-deep'>and houses ready for occupancy</p>
             </CardContent>
