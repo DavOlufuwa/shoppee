@@ -28,8 +28,8 @@ const About = () => {
               <CardMedia
                 component="img"
                 // image={info.img}
-                image="/static/assets/icons-large/best_price.svg"
-                className='w-16 ml-3'
+                image="../assets/icons-large/best_price.svg"
+                className='w-16 h-auto ml-3'
               />
               <CardContent>
               <p className='text-2xl font-bold mr-2 my-3.5'>{info.title}</p>
