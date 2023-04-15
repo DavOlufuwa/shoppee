@@ -8,7 +8,7 @@ import Balcony from '../assets/icons-small/balcony.svg'
 
 const Properties = () => {
   return (
-    <div className='px-8 palmtop:px-16 laptop:px-32'>
+    <div className='px-8 palmtop:px-16 laptop:px-32 bg-custom-buttonbg py-32'>
       <section className='uppercase text-xl flex items-center'><HorizontalRuleSharp fontSize='large'/> Popular</section>
       <section className='flex justify-between my-5'>
         <div className='text-lg tablet:text-2xl'>Our Popular Properties</div>
@@ -23,7 +23,7 @@ const Properties = () => {
                 image={house.img}
                /> 
               <CardContent className='text-xl'>
-                <div className='flex items-center justify-between pb-3 border-b-2 border-green-300'>
+                <div className='flex items-center justify-between pb-3 border-b-2 border-custom-light'>
                   <FmdGoodOutlined/> {house.address}
                 </div>
                 <div className='text-[12px] flex justify-between mt-3 text-custom-grey'>
