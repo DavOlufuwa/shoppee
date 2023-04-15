@@ -57,11 +57,7 @@ const Testimonials = () => {
               type='email'
               endAdornment={
               <InputAdornment position="end">
-                <IconButton
-                  edge="end"
-                >
                   <Button variant='contained' className=' bg-custom-mid px-6 shadow-none capitalize'>submit</Button>
-                </IconButton>
               </InputAdornment>
             }
             label="Enter your email address"

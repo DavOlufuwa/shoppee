@@ -1,15 +1,17 @@
 import { CalendarMonthOutlined, FmdGoodOutlined, MenuOpen } from '@mui/icons-material'
 import { Button, ButtonGroup, Card, CardActions, CardContent, CardMedia, Divider } from '@mui/material'
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import Logo from '../assets/logo/Logo.svg'
 import Customers from '../assets/icons-large/customers.svg'
 import Properties from '../assets/icons-large/properties.svg'
 
 const Header = () => {
   const [menu, setMenu] = useState(false)
-  console.log(menu)
+  const html = document.getElementById("html")
+  html.style.overflowY = menu ? "hidden" : ""
+  html.style.minHeight = menu ? "100%" : ""
   return (
-    <div className='bg-custom-buttonbg bg-hero bg-no-repeat bg-left bg-cover palmtop:bg-contain palmtop:bg-right '>
+    <div className='bg-custom-buttonbg bg-hero  bg-no-repeat bg-left bg-cover palmtop:bg-contain palmtop:bg-right sharp-nav:overflow-x-hidden '>
       <header className='flex border-b-2 border-custom-mid items-center justify-between py-5 px-6 palmtop:px-16 laptop:px-32'>
         <div>
           <div className='flex items-center gap-1'>
@@ -19,7 +21,7 @@ const Header = () => {
               <p className='text-xl font-bold text-custom-mid'><a href="#">PropertyForMe</a></p>
           </div>
         </div>
-        <nav className={`flex items-center gap-12 transition duration-300 sharp-nav:z-40 sharp-nav:absolute sharp-nav:right-0 sharp-nav:top-0 sharp-nav:bg-custom-light sharp-nav:min-h-full sharp-nav:pt-24 sharp-nav:px-14 sharp-nav:gap-16 sharp-nav:flex-col  ${menu ? '' : "sharp-nav:translate-x-full"}`}>
+        <nav className={`flex items-center gap-12 transition duration-300 sharp-nav:z-40 sharp-nav:absolute sharp-nav:right-0 sharp-nav:top-0 sharp-nav:bottom-0 sharp-nav:bg-custom-light sharp-nav:min-h-full sharp-nav:pt-24 sharp-nav:px-14 sharp-nav:gap-16 sharp-nav:flex-col  ${menu ? '' : "sharp-nav:translate-x-full sharp-nav:block" }`}>
           <ul className='flex items-center gap-8 sharp-nav:flex-col'>
             <li className='nav-link'>Home</li>
             <li className='nav-link'>About Us</li>
