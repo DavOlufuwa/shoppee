@@ -28,6 +28,7 @@ const About = () => {
               <CardMedia
                 component="img"
                 image={info.img}
+                sx={{height: "0"}}
                 className='w-16 h-0 ml-3'
               />
               <CardContent>
