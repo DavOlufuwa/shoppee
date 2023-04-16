@@ -10,7 +10,7 @@ export const AboutUs = [
     title:"Best Price",
     information:"Not sure what  you should be charging for your property? No need to worry, let us do the numbers for you.",
     // imgUrl:"./src/assets/icons-large/best_price.svg"
-    img:   <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    imgUrl:   <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="32" cy="32" r="31.5" fill="white" stroke="#00DEB6"/>
     <circle cx="32" cy="32" r="28" fill="#0AC09F"/>
     <rect x="40" y="40" width="24" height="24" rx="12" fill="#029278"/>
