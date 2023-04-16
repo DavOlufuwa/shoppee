@@ -9,7 +9,7 @@ export const Clients = [
   },
   {
     id:18,
-    img:"./src/assets/images/client-two.png",
+    img:"../assets/images/client-two.png",
     testimony:"PropertyForMe is the best real estate company I’ve had  transactions with and I highly recommend their services.",
     name:"Bambo Imuseni",
     role:"Developer at PWC",
