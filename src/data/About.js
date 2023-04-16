@@ -3,14 +3,13 @@ export const AboutUs = [
     id:1, 
     title:"Property Insurance",
     information:"We offer our customer property protection of liability coverage and insurance for their better life.",
-    imgUrl:require("../assets/icons-large/property_insurance.svg")
+    imgUrl:"./src/assets/icons-large/property_insurance.svg"
   },
   {
     id:2,
     title:"Best Price",
     information:"Not sure what  you should be charging for your property? No need to worry, let us do the numbers for you.",
-    // imgUrl:require("../src/assets/icons-large/best_price.svg")
-    imgUrl: require('../assets/icons-large/best_price.svg')
+    imgUrl:"./src/assets/icons-large/best_price.svg"
   },
   {
     id:3,

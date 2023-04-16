@@ -25,11 +25,7 @@ const About = () => {
         {
           AboutUs.map(info=>(
             <Card key={info.id} className='shadow-none bg-transparent'>
-              <CardMedia
-                component="img"
-                image={info.imgUrl}
-                className='w-16 h-auto ml-3'
-              ></CardMedia>
+              <img src={info.imgUrl} className='ml-4'/>
               <CardContent>
               <p className='text-2xl font-bold mr-2 my-3.5'>{info.title}</p>
               <p className='text-base'>{info.information}</p> 
