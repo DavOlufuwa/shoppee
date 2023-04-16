@@ -20,7 +20,7 @@ const Properties = () => {
             <Card key={house.id} className='shadow-none bg-white'>
                <CardMedia 
                 component="img"
-                image={house.img}
+                image={house.imgSpot}
                /> 
               <CardContent className='text-xl'>
                 <div className='flex items-center justify-between pb-3 border-b-2 border-custom-light'>
