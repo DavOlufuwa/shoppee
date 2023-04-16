@@ -27,8 +27,7 @@ const About = () => {
             <Card key={info.id} className='shadow-none bg-transparent'>
               <CardMedia
                 component="img"
-                // image={info.img}
-                image="../assets/icons-large/best_price.svg"
+                image={info.imgUrl}
                 className='w-16 h-auto ml-3'
               ></CardMedia>
               <CardContent>
