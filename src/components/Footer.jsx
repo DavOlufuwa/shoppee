@@ -1,11 +1,11 @@
 import { ExpandLess, ExpandMore } from '@mui/icons-material'
 import { Card, CardActions, CardContent, Collapse } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import Logowhite from '../assets/logo/Logo-white.svg'
-import facebook from '../assets/icons-small/facebook.svg'
-import instagram from '../assets/icons-small/instagram.svg'
-import twitter from '../assets/icons-small/twitter.svg'
-import linkedin from '../assets/icons-small/linked-in.svg'
+import Logowhite from '/assets/logo/Logo-white.svg'
+import facebook from '/assets/icons-small/facebook.svg'
+import instagram from '/assets/icons-small/instagram.svg'
+import twitter from '/assets/icons-small/twitter.svg'
+import linkedin from '/assets/icons-small/linked-in.svg'
 
 const Footer = () => {
   const [expand, setExpand] = useState(false)

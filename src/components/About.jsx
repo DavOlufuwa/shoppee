@@ -1,6 +1,6 @@
 import { Card, CardActions, CardContent, CardMedia ,Button, CardHeader} from '@mui/material'
 import React from 'react'
-import Greenhouse from '../assets/images/green-house.png'
+import Greenhouse from '/assets/images/green-house.png'
 import { AboutUs } from '../data/About'
 
 const About = () => {

@@ -83,7 +83,7 @@ export default {
         'sharp-nav': {'raw':"(max-width: 1350px)" }
       },
       backgroundImage:{
-        'hero': "url('./assets/images/hero-image.png')"
+        'hero': "url('./public/assets/images/hero-image.png')"
       },
     },
   },

@@ -1,9 +1,9 @@
 import { CalendarMonthOutlined, FmdGoodOutlined, MenuOpen } from '@mui/icons-material'
 import { Button, ButtonGroup, Card, CardActions, CardContent, CardMedia, Divider } from '@mui/material'
 import React, {  useState } from 'react'
-import Logo from '../assets/logo/Logo.svg'
-import Customers from '../assets/icons-large/customers.svg'
-import Properties from '../assets/icons-large/properties.svg'
+import Logo from '/assets/logo/Logo.svg'
+import Customers from '/assets/icons-large/customers.svg'
+import Properties from '/assets/icons-large/properties.svg'
 
 const Header = () => {
   const [menu, setMenu] = useState(false)

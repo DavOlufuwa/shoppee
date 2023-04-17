@@ -2,9 +2,9 @@ import { East, FmdGoodOutlined, HorizontalRuleSharp } from '@mui/icons-material'
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Divider , Button } from '@mui/material'
 import React from 'react'
 import { Property } from '../data/Property'
-import Bedroom from '../assets/icons-small/bedroom.svg'
-import Toilet from '../assets/icons-small/bathroom.svg'
-import Balcony from '../assets/icons-small/balcony.svg'
+import Bedroom from '/assets/icons-small/bedroom.svg'
+import Toilet from '/assets/icons-small/bathroom.svg'
+import Balcony from '/assets/icons-small/balcony.svg'
 
 const Properties = () => {
   return (
