@@ -4,6 +4,8 @@ import React, {  useState } from 'react'
 import Logo from '/assets/logo/Logo.svg'
 import Customers from '/assets/icons-large/customers.svg'
 import Properties from '/assets/icons-large/properties.svg'
+import Calendar from '/assets/icons-small/calendar-header.png'
+import location from '/assets/icons-small/location-header.png'
 
 const Header = () => {
   const [menu, setMenu] = useState(false)
@@ -58,13 +60,13 @@ const Header = () => {
           <Card className='rounded-ee-none shadow-none bg-tran rounded-es-none rounded-ss-md rounded-se-md palmtop:rounded-ss-none palmtop:rounded-es-lg palmtop:rounded-se-lg'>
             <CardContent className='px-6'>
               <p className='text-base font-[500] text-custom-grey'>Location</p>
-              <div className='flex items-center text-xl gap-4'>Lekki, Lagos <span><FmdGoodOutlined sx={{color:"#808080"}}/></span></div>
+              <div className='flex items-center text-xl gap-4'>Lekki, Lagos <span><img src={location}/></span></div>
             </CardContent>
           </Card>
           <Card className='rounded-ss-none shadow-none rounded-se-none rounded-ee-none rounded-es-none border-b-75' >
             <CardContent className='px-6'>
               <p className='text-base font-[500] text-custom-grey'>When</p>
-              <div className='flex items-center text-xl gap-4'>Select Move-in Date<span><CalendarMonthOutlined sx={{color:"#808080"}}/></span></div>
+              <div className='flex items-center text-xl gap-4'>Select Move-in Date<span><img src={Calendar}/></span></div>
             </CardContent>
           </Card>
           <Card className='py-3 rounded-se-none rounded-ss-none rounded-ee-lg rounded-es-lg shadow-none palmtop:rounded-es-none palmtop:rounded-se-lg'>

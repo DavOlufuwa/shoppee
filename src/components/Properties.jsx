@@ -5,6 +5,7 @@ import { Property } from '../data/Property'
 import Bedroom from '/assets/icons-small/bedroom.svg'
 import Toilet from '/assets/icons-small/bathroom.svg'
 import Balcony from '/assets/icons-small/balcony.svg'
+import locationdark from '/assets/icons-small/location.png'
 
 const Properties = () => {
   return (
@@ -24,7 +25,7 @@ const Properties = () => {
                /> 
               <CardContent className='text-xl'>
                 <div className='flex items-center justify-between pb-3 border-b-2 border-custom-light'>
-                  <FmdGoodOutlined/> {house.address}
+                  <img src={locationdark}/> {house.address}
                 </div>
                 <div className='text-[12px] flex justify-between mt-3 text-custom-grey'>
                   <div  className='flex items-center'><span className='mr-0.5'><img src={Bedroom}/></span>{house.options[0]}</div>
