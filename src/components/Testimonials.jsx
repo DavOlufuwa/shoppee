@@ -7,7 +7,7 @@ const Testimonials = () => {
   const [rate, setRate] = useState(4) 
   return (
     <>
-      <div className='mt-20 px-8 palmtop:px-16 laptop:px-32'>
+      <div className='mt-20 px-8 tablet:px-16 laptop:px-32'>
         <section className="uppercase text-xl flex items-center my-5"><HorizontalRuleSharp fontSize='large'/>Testimonials</section>
         <section className='capitalize text-lg tablet:text-2xl mb-4'>
           What our Clients say about us
@@ -32,7 +32,7 @@ const Testimonials = () => {
               ))
             }
         </section>
-        <section className='flex justify-center gap-5 my-10'>
+        <section className='flex justify-center gap-5 my-10' id="agents">
           <Button variant='outlined' className='py-2 border-[2px] border-custom-light'><ArrowBack sx={{color:"#029278"}}/></Button>
           <Button variant='outlined' className='py-2 border-[2px] border-custom-light bg-custom-mid'><ArrowForward sx={{color:"#fff"}}/></Button>
         </section>
@@ -57,7 +57,7 @@ const Testimonials = () => {
               type='email'
               endAdornment={
               <InputAdornment position="end">
-                  <Button variant='contained' className=' bg-custom-mid px-6 shadow-none capitalize'>submit</Button>
+                  <Button variant='contained' className=' bg-custom-mid px-6 shadow-none capitalize transition duration-300 hover:bg-custom-light hover:text-custom-buttonbg  hover:border-custom-mid'>submit</Button>
               </InputAdornment>
             }
             label="Enter your email address"

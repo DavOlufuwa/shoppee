@@ -142,10 +142,10 @@ const Footer = () => {
       </section>
       <section className='flex flex-col px-6 pl-4 py-5 gap-12 items-start  tablet:flex-row-reverse tablet:justify-between tablet:border-t-[2px] tablet:px-20 tablet:items-center laptop:px-32 laptop:py-8'>
         <div className='flex gap-3 p-0 self-start tablet:gap-5 palmtop:gap-8 laptop:gap-10 laptop:pr-20'>
-          <span><img src={facebook} className='opacity-50'/></span>
-          <span><img src={twitter}  className='opacity-50'/></span>
-          <span><img src={instagram} className='opacity-50' /></span>
-          <span><img src={linkedin} className='opacity-50'/></span>
+          <span><img src={facebook} className='opacity-50 cursor-pointer'/></span>
+          <span><img src={twitter}  className='opacity-50 cursor-pointer'/></span>
+          <span><img src={instagram} className='opacity-50 cursor-pointer' /></span>
+          <span><img src={linkedin} className='opacity-50 cursor-pointer'/></span>
         </div>
         <div className='text-[12px] font-[500] text-custom-background opacity-50'>
           &copy;2022 PropertyForMe. All rights reserved by Ayomide

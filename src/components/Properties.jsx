@@ -1,5 +1,5 @@
 import { East, FmdGoodOutlined, HorizontalRuleSharp } from '@mui/icons-material'
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Divider , Button } from '@mui/material'
+import { Card, CardActionArea, CardActions, CardContent, CardMedia , Button } from '@mui/material'
 import React from 'react'
 import { Property } from '../data/Property'
 import Bedroom from '/assets/icons-small/bedroom.svg'
@@ -8,7 +8,7 @@ import Balcony from '/assets/icons-small/balcony.svg'
 
 const Properties = () => {
   return (
-    <div className='px-8 palmtop:px-16 laptop:px-32 bg-custom-buttonbg py-32'>
+    <div className='px-8 tablet:px-16 laptop:px-32 bg-custom-buttonbg py-32' id='properties'>
       <section className='uppercase text-xl flex items-center'><HorizontalRuleSharp fontSize='large'/> Popular</section>
       <section className='flex justify-between my-5'>
         <div className='text-lg tablet:text-2xl'>Our Popular Properties</div>
@@ -32,11 +32,11 @@ const Properties = () => {
                   <div className='flex items-center'><span className='mr-0.5'><img src={Balcony}/></span>{house.options[2]}</div>
                 </div>
               </CardContent>
-              <CardActions className='flex justify-between items-center'>
+              <CardActions className='flex justify-between items-center mb-2 mx-2'>
                 <div className='text-2xl'>
                   {house.price}
                 </div>
-                <Button variant="outlined" className='bg-custom-buttonbg shadow-none text-base capitalize text-custom-mid font-bold border-2 border-custom-light px-6 rounded-md py-2'>Book now</Button>
+                <Button variant="outlined" className='bg-custom-buttonbg shadow-none text-base capitalize text-custom-mid font-bold border-2 border-custom-light px-6 rounded-md py-2 transition duration-300 hover:text-custom-buttonbg hover:bg-custom-mid hover:border-custom-background'>Book now</Button>
               </CardActions>
             </Card>
           )))

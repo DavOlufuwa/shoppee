@@ -11,8 +11,8 @@ const Header = () => {
   html.style.overflowY = menu ? "hidden" : ""
   html.style.minHeight = menu ? "100%" : ""
   return (
-    <div className='bg-custom-buttonbg bg-hero  bg-no-repeat bg-left bg-cover palmtop:bg-contain palmtop:bg-right sharp-nav:overflow-x-hidden '>
-      <header className='flex border-b-2 border-custom-mid items-center justify-between py-5 px-6 palmtop:px-16 laptop:px-32'>
+    <div className='relative w-full bg-custom-buttonbg overflow-x-hidden bg-hero  bg-no-repeat bg-left bg-cover palmtop:bg-contain palmtop:bg-right sharp-nav:overflow-x-hidden'>
+      <header className='flex border-b-2 border-custom-mid items-center justify-between py-5 px-6 palmtop:px-16 laptop:px-32 '>
         <div>
           <div className='flex items-center gap-1'>
             <div className='p-1 border-2 rounded-full border-custom-mid'>
@@ -23,24 +23,24 @@ const Header = () => {
         </div>
         <nav className={`flex items-center gap-12 transition duration-300 sharp-nav:z-40 sharp-nav:absolute sharp-nav:right-0 sharp-nav:top-0 sharp-nav:bottom-0 sharp-nav:bg-custom-light sharp-nav:min-h-full sharp-nav:pt-24 sharp-nav:px-14 sharp-nav:gap-16 sharp-nav:flex-col  ${menu ? '' : "sharp-nav:translate-x-full sharp-nav:block" }`}>
           <ul className='flex items-center gap-8 sharp-nav:flex-col'>
-            <li className='nav-link'>Home</li>
-            <li className='nav-link'>About Us</li>
-            <li className='nav-link'>Properties</li>
-            <li className='nav-link'>Blog</li>
-            <li className='nav-link'>Agents</li>
+            <li className='nav-link' onClick={()=>setMenu(false)}><a href='#'>Home</a></li>
+            <li className='nav-link' onClick={()=>setMenu(false)}><a href='#about'>About Us</a></li>
+            <li className='nav-link' onClick={()=>setMenu(false)}><a href='#properties'>Properties</a></li>
+            <li className='nav-link' onClick={()=>setMenu(false)}><a href='#blog'>Blog</a></li>
+            <li className='nav-link' onClick={()=>setMenu(false)}><a href='#agents'>Agents</a></li>
           </ul>
-          <div className='flex gap-6 align-baseline sharp-nav:flex-col sharp-nav:items-center sharp-nav:py-6 sharp-nav:gap-8' >
-            <Button variant='outlined' className='capitalize px-10 py-2 text-base font-bold text-custom-deep border-2 border-custom-mid rounded-md sharp-nav:w-44'>Register</Button>
-            <Button variant='contained' className='capitalize px-8 py-2.5 text-base font-bold text-gray-200 bg-custom-mid rounded-md shadow-none sharp-nav:w-44'>Find a Home</Button>
+          <div className='flex gap-6 align-baseline sharp-nav:flex-col sharp-nav:items-center  sharp-nav:py-6 sharp-nav:gap-8' >
+            <Button variant='outlined' className='capitalize px-10 py-2 text-base font-bold text-custom-deep border-2 border-custom-mid rounded-md transition duration-300 hover:text-custom-buttonbg hover:bg-custom-mid sharp-nav:w-44'>Register</Button>
+            <Button variant='contained' className='capitalize px-8 py-2.5 text-base font-bold text-gray-200 bg-custom-mid rounded-md shadow-none transition duration-300 hover:bg-custom-light hover:text-custom-buttonbg  hover:border-custom-mid sharp-nav:w-44 '>Find a Home</Button>
           </div>
         </nav>
         <div className='hidden sharp-nav:z-50 sharp-nav:block absolute right-5 top-5 cursor-pointer palmtop:right-10'
           onClick={()=>setMenu(!menu)}
         >
-          <MenuOpen fontSize='large' sx={{color:"#029278"}} />
+          <MenuOpen fontSize='large' sx={menu ? {color:"#fff"} : {color:"#029278"} } />
         </div>
       </header>
-      <main className="px-5 py-2 palmtop:px-16 laptop:px-32">
+      <main className="px-5 py-2 tablet:px-16 laptop:px-32">
         <section>
           <section className='text-4xl text-custom-deep mt-10 tablet:mt-16 py-5 pb-7 tablet:w-4/5 palmtop:w-1/2 laptop:w-2/5 laptop:pr-16 laptop:leading-snug'>
             Buy, Rent, or Sell your Property from anywhere 
@@ -69,7 +69,7 @@ const Header = () => {
           </Card>
           <Card className='py-3 rounded-se-none rounded-ss-none rounded-ee-lg rounded-es-lg shadow-none palmtop:rounded-es-none palmtop:rounded-se-lg'>
             <CardActions className='px-6'>
-              <Button variant='contained' className='py-3 px-8 rounded-lg bg-custom-mid capitalize shadow-none'>Browse Properties</Button>
+              <Button variant='contained' className='py-3 px-8 rounded-lg bg-custom-mid capitalize shadow-none transition duration-300 hover:bg-custom-light hover:text-custom-buttonbg  hover:border-custom-mid'>Browse Properties</Button>
             </CardActions>
           </Card>
         </div>

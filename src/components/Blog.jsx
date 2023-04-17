@@ -5,11 +5,11 @@ import { BlogInfo } from '../data/Blog'
 
 const Blog = () => {
   return (
-    <div className='mt-20 px-8 palmtop:px-16 laptop:px-32'>
+    <div className='mt-20 px-8 tablet:px-16 laptop:px-32' id='blog'>
       <section className="uppercase text-xl flex items-center"><HorizontalRuleSharp fontSize='large'/>OUR BLOG</section>
       <section className="flex justify-between items-center my-5 tablet:mb-0">
         <div className='text-lg tablet:text-2xl'>Latest Information</div>
-        <Button variant='contained' className='shadow-none bg-custom-mid text-white text-base capitalize px-6 rounded-md py-2'>See More</Button>
+        <Button variant='contained' className='shadow-none bg-custom-mid text-white text-base capitalize px-6 rounded-md py-2 transition duration-300 hover:bg-custom-light hover:text-custom-buttonbg  hover:border-custom-mid'>See More</Button>
       </section>
       <section className='text-base text-custom-grey font-normal tablet:text-lg tablet:font-normal  tablet:w-1/2 mb-6'>Stay up to date with all the information about our listed properties</section>
 
@@ -30,7 +30,7 @@ const Blog = () => {
                   </div>
                 </CardContent>
                 <CardActions className='pl-0'>
-                  <Button variant='outlined' className='bg-custom-buttonbg shadow-none text-base capitalize text-custom-mid font-bold border-2 border-custom-light px-8 rounded-md py-2'>Read More</Button>
+                  <Button variant='outlined' className='bg-custom-buttonbg shadow-none text-base capitalize text-custom-mid font-bold border-2 border-custom-light px-8 rounded-md py-2 transition duration-300 hover:text-custom-buttonbg hover:bg-custom-mid hover:border-custom-background'>Read More</Button>
                 </CardActions>
             </Card>
           ))
