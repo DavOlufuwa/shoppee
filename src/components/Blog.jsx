@@ -5,7 +5,7 @@ import { BlogInfo } from '../data/Blog'
 
 const Blog = () => {
   return (
-    <div className='mt-20 px-8 tablet:px-16 laptop:px-32' id='blog'>
+    <div className='mt-20  py-32 px-8 tablet:px-16 laptop:px-32' id='blog'>
       <section className="uppercase text-xl flex items-center"><HorizontalRuleSharp fontSize='large'/>OUR BLOG</section>
       <section className="flex justify-between items-center my-5 tablet:mb-0">
         <div className='text-lg tablet:text-2xl'>Latest Information</div>

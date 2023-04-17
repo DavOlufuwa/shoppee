@@ -12,7 +12,7 @@ const Header = () => {
   html.style.minHeight = menu ? "100%" : ""
   return (
     <div className='relative w-full bg-custom-buttonbg overflow-x-hidden bg-hero  bg-no-repeat bg-left bg-cover palmtop:bg-contain palmtop:bg-right sharp-nav:overflow-x-hidden'>
-      <header className='flex border-b-2 border-custom-mid items-center justify-between py-5 px-6 palmtop:px-16 laptop:px-32 '>
+      <header className='fixed w-full bg-custom-buttonbg z-[30] flex border-b-2 border-custom-mid items-center justify-between py-5 px-6 palmtop:px-16 laptop:px-32 '>
         <div>
           <div className='flex items-center gap-1'>
             <div className='p-1 border-2 rounded-full border-custom-mid'>
@@ -21,8 +21,8 @@ const Header = () => {
               <p className='text-xl font-bold text-custom-mid'><a href="#">PropertyForMe</a></p>
           </div>
         </div>
-        <nav className={`flex items-center gap-12 transition duration-300 sharp-nav:z-40 sharp-nav:absolute sharp-nav:right-0 sharp-nav:top-0 sharp-nav:bottom-0 sharp-nav:bg-custom-light sharp-nav:min-h-full sharp-nav:pt-24 sharp-nav:px-14 sharp-nav:gap-16 sharp-nav:flex-col  ${menu ? '' : "sharp-nav:translate-x-full sharp-nav:block" }`}>
-          <ul className='flex items-center gap-8 sharp-nav:flex-col'>
+        <nav className={`flex items-center gap-12 transition duration-300 sharp-nav:z-[50] sharp-nav:absolute sharp-nav:right-0 sharp-nav:top-0  sharp-nav:bottom-0 sharp-nav:h-full sharp-nav:bg-custom-light  sharp-nav:min-h-[100vh] sharp-nav:pt-24 sharp-nav:px-14 sharp-nav:gap-16 sharp-nav:flex-col  ${menu ? '' : "sharp-nav:translate-x-full sharp-nav:block" }`}>
+          <ul className='flex items-center gap-8 sharp-nav:flex-col sharp-nav:bg-custom-light'>
             <li className='nav-link' onClick={()=>setMenu(false)}><a href='#'>Home</a></li>
             <li className='nav-link' onClick={()=>setMenu(false)}><a href='#about'>About Us</a></li>
             <li className='nav-link' onClick={()=>setMenu(false)}><a href='#properties'>Properties</a></li>
@@ -40,7 +40,7 @@ const Header = () => {
           <MenuOpen fontSize='large' sx={menu ? {color:"#fff"} : {color:"#029278"} } />
         </div>
       </header>
-      <main className="px-5 py-2 tablet:px-16 laptop:px-32">
+      <main className="px-5 py-2 pt-10 tablet:px-16 laptop:px-32">
         <section>
           <section className='text-4xl text-custom-deep mt-10 tablet:mt-16 py-5 pb-7 tablet:w-4/5 palmtop:w-1/2 laptop:w-2/5 laptop:pr-16 laptop:leading-snug'>
             Buy, Rent, or Sell your Property from anywhere 
