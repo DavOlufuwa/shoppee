@@ -7,7 +7,7 @@ const Categories = () => {
   return (
     <div className='categories-container'>
       {
-        homeCategories.map(({id, title, imageUrl })=>(
+        homeCategories.map(({id, title, imageUrl , slug})=>(
           <div key={id} className='category-item'>
             <div className='relative overflow-hidden h-full w-full '>
               <img src={imageUrl} alt={title} className="h-full w-full object-cover "/>
@@ -16,7 +16,7 @@ const Categories = () => {
             <div className='button'>
                 <Link
                   to={"category"}
-                  state={{category: 'Hats'}}
+                  state={{category: slug}}
                 >
               <ButtonComponent buttonType="outlined">
                   See All

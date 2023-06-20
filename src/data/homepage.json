@@ -2,16 +2,19 @@
   {
     "id": 1,
     "title": "For Men",
-    "imageUrl": "https://source.unsplash.com/b3oyT44E3LE"
+    "imageUrl": "https://source.unsplash.com/b3oyT44E3LE",
+    "slug": "Mens"
   },
   {
     "id": 2,
     "title": "For Women",
-    "imageUrl": "https://source.unsplash.com/-EKIQx3h8Eg"
+    "imageUrl": "https://source.unsplash.com/-EKIQx3h8Eg",
+    "slug": "Womens"
   },
   {
     "id": 3,
-    "title": "Fashion For EveryOne",
-    "imageUrl": "https://source.unsplash.com/nIKCy5CWIzk/"
+    "title": "Explore All",
+    "imageUrl": "https://source.unsplash.com/nIKCy5CWIzk/",
+    "Slug":"Everyone"
   }
 ]

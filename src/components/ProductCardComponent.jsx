@@ -6,18 +6,18 @@ import ButtonComponent from './ButtonComponent'
 import FormInput from './FormInput'
 
 
-const ProductCardComponent = () => {
+const ProductCardComponent = ({item}) => {
+  const {id, name, imageUrl, price, size} = item;
 
   const dispatch = useDispatch()
 
-  const bigi = ''
-
   return (
     <div className='product-card'>
-      <div className='container-block'>
+      <div className='container-block h-[300px]'>
         <img 
-          src={'https://i.ibb.co/4W2DGKm/floral-blouse.png'} 
-          alt='pattern-gown'
+          src={imageUrl} 
+          alt={name}
+          className='w-full h-full object-cover'
         />
         <div className='button-bar'>
           <div className='pointer'><i className='material-icons'>visibility</i></div>
@@ -25,9 +25,9 @@ const ProductCardComponent = () => {
           <div className='pointer'><i className='material-icons'>add_shopping_cart</i></div>
         </div>
       </div>
-      <div className='text-secondary-plum'>
-        <h2 className='text-xl font-bold'>Floral Blouse</h2>
-        <p className='text-xl font-medium text-secondary-plum-hover'> &#8358;500</p>
+      <div className='h-[px]'>
+        <h2 className='text-[16px] mt-1'>{name}</h2>
+        <p className='text-lg font-medium '> &#8358;{price}</p>
       </div>
     </div>
   )

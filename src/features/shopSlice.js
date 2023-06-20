@@ -14,7 +14,8 @@ const shopSlice = createSlice({
   reducers: {
     searchCart: (state, action) => {
       state.category = state.items.filter((item) => item.title === action.payload)
-    }
+    },
+    
   }})
 
 
