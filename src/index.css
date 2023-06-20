@@ -113,4 +113,12 @@
   .container-block:hover .button-bar{
     @apply  -translate-y-20;
   }
+
+
+  .form-input:focus ~.form-input-label{
+    top:-8px;
+    font-size: 12px;
+    color: #0e0b2f;
+    font-weight: 300;
+  }
 }

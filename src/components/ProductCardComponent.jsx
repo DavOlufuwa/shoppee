@@ -1,6 +1,17 @@
 import { Favorite, Image } from '@mui/icons-material'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { searchCart } from '../features/shopSlice'
+import ButtonComponent from './ButtonComponent'
+import FormInput from './FormInput'
+
+
 const ProductCardComponent = () => {
+
+  const dispatch = useDispatch()
+
+  const bigi = ''
+
   return (
     <div className='product-card'>
       <div className='container-block'>
@@ -17,7 +28,15 @@ const ProductCardComponent = () => {
       <div className='text-secondary-plum'>
         <h2 className='text-xl font-bold'>Floral Blouse</h2>
         <p className='text-xl font-medium text-secondary-plum-hover'> &#8358;500</p>
+        <ButtonComponent buttonType="contained" onClick={()=> dispatch(searchCart("Hats"))}>Check out</ButtonComponent>
       </div>
+      <FormInput 
+        label="Address" 
+        type="text"
+        name="password"
+        value={bigi}
+        required 
+        />
     </div>
   )
 }
