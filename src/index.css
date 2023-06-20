@@ -14,15 +14,64 @@
     scroll-behavior: smooth;
   } 
 
+  header{
+    @apply bg-background-secondary fixed w-full flex justify-around items-center py-3;
+    z-index: 40;
+  }
+
+  .nav-block{
+    @apply bg-background-secondary py-3;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
   .nav-link{
-    @apply text-secondary-plum-hover font-bold hover:text-primary-brand duration-200; 
+    @apply font-bold text-secondary-plum-hover hover:text-primary-brand duration-200
   }
+
+  .mobile-btn{
+    display: none;
+  }
+
   .mobile-btn i{
-    color: #4c49b1;
-    font-size:30px;
-    font-weight: 900;
-    background-color: red;
+    font-size:40px;
+    color :#b744b8; 
   }
+  
+  @media screen and (max-width: 600px) {
+    .mobile-btn{
+      display: flex;
+      @apply border-[1px] border-secondary-plum-hover;
+    }
+    .nav-block{
+      position: absolute;
+      /* display: none; */
+      top: 57px;
+      z-index:-30;
+      width: 100%;
+      padding: 0 40px;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: padding 0.3s cubic-bezier(0.4, 0, 0.9, 1);
+    }
+    .nav-block .nav-link{
+      display: none;
+      transition: display 0.3s eas;
+    }
+    .nav-block.open > .nav-link{
+      display: block;
+    }
+    .nav-block.open{
+      padding: 40px;
+    }
+  }
+
+
+  
+
+
 
   .product-card{
     @apply w-60 overflow-hidden;
