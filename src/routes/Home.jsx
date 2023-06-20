@@ -1,13 +1,18 @@
-import { Button } from '@mui/material'
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import Navigation from '../components/Navigation'
 import Categories from './Categories'
 
 const Home = () => {
   return (
-    <div>
-       <Categories/>
-    </div>
+    <>
+      <Navigation/>
+      <main className='mt-24 tablet:mt-16'>
+        <Outlet />
+      </main>
+    </>
   )
 }
+
 
 export default Home

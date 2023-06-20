@@ -28,15 +28,7 @@ const ProductCardComponent = () => {
       <div className='text-secondary-plum'>
         <h2 className='text-xl font-bold'>Floral Blouse</h2>
         <p className='text-xl font-medium text-secondary-plum-hover'> &#8358;500</p>
-        <ButtonComponent buttonType="contained" onClick={()=> dispatch(searchCart("Hats"))}>Check out</ButtonComponent>
       </div>
-      <FormInput 
-        label="Address" 
-        type="text"
-        name="password"
-        value={bigi}
-        required 
-        />
     </div>
   )
 }

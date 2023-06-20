@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 import Logo  from '/assets/icons/logo-white.svg'
 
 const Navigation = () => {
-  const [navOpen, setNavOpen] = useState(false)
-  
-  
+  const [navOpen, setNavOpen] = useState(false)  
   return (
     <header>
       <div className='nav-container'>

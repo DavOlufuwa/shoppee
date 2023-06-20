@@ -15,7 +15,7 @@
   } 
 
   header{
-    @apply bg-background-secondary fixed w-full flex justify-around items-center py-3;
+    @apply bg-background-secondary fixed top-0 w-full flex justify-around items-center py-3;
     z-index: 40;
   }
 
@@ -71,7 +71,7 @@
 
   
 
-
+/* Product Card */
 
   .product-card{
     @apply w-60 overflow-hidden;
@@ -113,12 +113,52 @@
   .container-block:hover .button-bar{
     @apply  -translate-y-20;
   }
+/* Product Component */
 
-
+/* Form Component */
   .form-input:focus ~.form-input-label{
     top:-8px;
     font-size: 12px;
     color: #0e0b2f;
     font-weight: 300;
   }
+/* Form Component */
+
+
+/* Categories Container */
+.categories-container{
+  @apply p-4 flex flex-col gap-3 min-h-screen tablet:grid tablet:grid-cols-2 tablet:gap-3 tablet:h-full;
+}
+
+.category-item{
+  @apply relative flex h-[300px] w-full tablet:h-[350px];
+}
+.category-item:hover img{
+  @apply scale-[1.15] duration-[1.5s] ease-in-out brightness-75 ;
+}
+.category-item:last-of-type{
+  @apply col-span-2;
+}
+
+.category-item .title{
+  @apply absolute top-3 w-full h-full text-primary-brand-inactive text-4xl font-extrabold flex items-center justify-center  
+}
+
+.category-item .button{
+  @apply absolute top-10 flex items-center justify-center w-full h-full mt-8 
+}
+
+@media (hover:hover)  {
+  .category-item .title, 
+  .category-item .button{
+    @apply opacity-0
+  }
+
+  .category-item:hover .title,
+  .category-item:hover .button{
+    @apply opacity-100 ease-in duration-300
+  }
+}
+
+
 }

@@ -1,16 +1,31 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ButtonComponent from '../components/ButtonComponent'
-import Navigation from '../components/Navigation'
-import ProductCardComponent from '../components/ProductCardComponent'
+import homeCategories from '../data/homepage.json'
 
 const Categories = () => {
   return (
-    <div>
-    <Navigation />
-      <ButtonComponent
-        buttonType='disabled'
-      >Hello There</ButtonComponent>
-      <ProductCardComponent/>   
+    <div className='categories-container'>
+      {
+        homeCategories.map(({id, title, imageUrl })=>(
+          <div key={id} className='category-item'>
+            <div className='relative overflow-hidden h-full w-full '>
+              <img src={imageUrl} alt={title} className="h-full w-full object-cover "/>
+            </div>
+            <div className='title'>{title}</div>
+            <div className='button'>
+                <Link
+                  to={"category"}
+                  state={{category: 'Hats'}}
+                >
+              <ButtonComponent buttonType="outlined">
+                  See All
+              </ButtonComponent>
+              </Link>
+            </div>
+          </div>
+        ))
+      }
     </div>
   )
 }
