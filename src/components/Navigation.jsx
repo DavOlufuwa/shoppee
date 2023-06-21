@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo  from '/assets/icons/logo-white.svg'
+import cartIcon from '/assets/icons/fi_shopping-cart.svg'
 
 const Navigation = () => {
   const [navOpen, setNavOpen] = useState(false)  
@@ -18,6 +19,10 @@ const Navigation = () => {
         <Link to="/" className="nav-link">About</Link>
         <Link to="/" className="nav-link">Contact</Link>
       </nav>
+      <div className='cart-icon cursor-pointer'>
+        <img src={cartIcon} alt='cart icon'/>
+        <div>5</div>
+      </div>
       <div 
         className="mobile-btn"
         onClick={() => setNavOpen(!navOpen)}

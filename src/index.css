@@ -36,19 +36,42 @@
   }
 
   .mobile-btn i{
-    font-size:40px;
+    font-size:30px;
     color :#b744b8; 
+  }
+
+  .cart-icon{
+    position: relative;
+  }
+
+  .cart-icon img{
+    height: 26px;
+    color:#b744b8;
+  }
+
+  .cart-icon > div{
+    @apply bg-secondary-plum-inactive absolute grid place-content-center font-bold text-primary-brand rounded-full p-1 w-[26px] h-[26px] -top-3 -right-4
   }
   
   @media screen and (max-width: 600px) {
+    header{
+      @apply justify-between px-7 py-6
+      
+    }
+    .cart-icon{
+      position: absolute;
+      right: 120px;
+
+    }
     .mobile-btn{
       display: flex;
-      @apply border-[1px] border-secondary-plum-hover;
+      @apply border-[1px] border-secondary-plum-hover cursor-pointer;
     }
     .nav-block{
       position: absolute;
       /* display: none; */
-      top: 57px;
+      top: 56px;
+      left: 0;
       z-index:-30;
       width: 100%;
       padding: 0 40px;
