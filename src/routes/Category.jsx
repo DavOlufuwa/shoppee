@@ -11,7 +11,7 @@ import ProductCardComponent from '../components/ProductCardComponent';
 const Category = () => {
   
   const dispatch = useDispatch();
-  const location = useLocation({})
+  const location = useLocation()
   const category = location.state?.category
   
   const [categoryArray, setCategoryArray] = useState([])

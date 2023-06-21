@@ -2,9 +2,23 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo  from '/assets/icons/logo-white.svg'
 import cartIcon from '/assets/icons/fi_shopping-cart.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { calculateTotalAmount } from '../features/cartSlice'
 
 const Navigation = () => {
+  
+  const dispatch = useDispatch()
+  
   const [navOpen, setNavOpen] = useState(false)  
+
+  const {cartItems ,quantity, total} = useSelector((state)=> state.cart) 
+
+  useEffect(()=>{
+    dispatch(calculateTotalAmount())
+  },[cartItems])
+  
+  
   return (
     <header>
       <div className='nav-container'>
@@ -21,7 +35,7 @@ const Navigation = () => {
       </nav>
       <div className='cart-icon cursor-pointer'>
         <img src={cartIcon} alt='cart icon'/>
-        <div>5</div>
+        <div>{quantity}</div>
       </div>
       <div 
         className="mobile-btn"

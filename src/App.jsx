@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider,} 
 import Categories from './routes/Categories'
 import Category from './routes/Category'
 import Home from './routes/Home'
+import ProductInfo from './routes/ProductInfo'
 
 
 const theme = createTheme({
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<Home />}>
       <Route index element={<Categories/>} />
       <Route path='category' element={<Category />} />
+      <Route path='productinformation' element={<ProductInfo/>} />
     </Route>
   )
 )
