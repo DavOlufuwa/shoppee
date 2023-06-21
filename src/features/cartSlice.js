@@ -18,11 +18,15 @@ const cartSlice = createSlice({
       const itemExists = state.cartItems.find((cartItem) => cartItem.id === action.payload.id)
       
       if(itemExists){
-        return
-      }else{
-        state.cartItems = [...state.cartItems, {...action.payload, quantity: 1}]
+        itemExists.quantity = itemExists.quantity + action.payload.quantity
+        return;
       }
-      console.log(state.cartItems)
+      if(itemExists?.quantity < action.payload.quantity){
+        itemExists.quantity = itemExists.quantity + action.payload.quantity
+      }
+        
+      state.cartItems = [...state.cartItems, {...action.payload}]
+            
     },
     removeCartItem:(state, action)=>{
       const id = action.payload.id

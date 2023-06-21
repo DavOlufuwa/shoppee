@@ -7,12 +7,12 @@ const ProductInfo = () => {
   
   const location = useLocation()
 
-  const incomingProduct = location.state?.product
+  const incomingProduct = location.state
 
-  const [product, setProduct] = useState(incomingProduct)
+  const [product] = useState(incomingProduct)
 
   return (
-    <div>
+    <div className='bg-background-tetiary'>
       <ProductInfoComponent product={product}/>
     </div>
   )

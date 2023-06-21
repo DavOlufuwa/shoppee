@@ -183,5 +183,33 @@
   }
 }
 
+/* Counter */
+.counter{
+  
+  @apply flex items-center justify-between;
+}
+
+.counter span{
+  @apply flex items-center justify-center border-background-secondary-hover;
+}
+
+.counter span:nth-of-type(2){
+  @apply border-y-[1px] py-2 px-3 h-full font-extrabold;
+}
+.counter span:first-of-type,
+.counter span:last-of-type{
+  @apply border-[1px] p-2 hover:bg-secondary-plum-disabled duration-200 cursor-pointer;
+}
+
+.counter span > i {
+  color: #6e6c7e;
+}
+
+.counter span:hover > i {
+  color: #0d092b;
+  transition: all 0.1s;
+}
+
+/* Counter styles */
 
 }

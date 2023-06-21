@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Logo  from '/assets/icons/logo-white.svg'
 import cartIcon from '/assets/icons/fi_shopping-cart.svg'
 import { useDispatch, useSelector } from 'react-redux'
@@ -8,6 +8,8 @@ import { calculateTotalAmount } from '../features/cartSlice'
 
 const Navigation = () => {
   
+  const navigate = useNavigate()
+
   const dispatch = useDispatch()
   
   const [navOpen, setNavOpen] = useState(false)  
@@ -17,12 +19,13 @@ const Navigation = () => {
   useEffect(()=>{
     dispatch(calculateTotalAmount())
   },[cartItems])
+
   
   
   return (
     <header>
       <div className='nav-container'>
-        <div className='logo-box flex items-center w-36 cursor-pointer'>
+        <div className='logo-box flex items-center w-36 cursor-pointer' onClick={() => navigate('/')}>
           <img src={Logo} alt='logo' className=''/>
         </div>
       </div>
