@@ -13,7 +13,7 @@ const ButtonComponent = ({children, buttonType, ...otherprops}) => {
     <button 
       {...otherprops} 
       className={
-        ` w-[160px] capitalize text-[16px] px-4 py-2 ${buttonHandler[buttonType]} transition duration-200 cursor-pointer`
+        ` w-[160px] h-11 capitalize text-[16px] px-4 py-2 ${buttonHandler[buttonType]} transition duration-200 cursor-pointer`
       }
     >
       {children}

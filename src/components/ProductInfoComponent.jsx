@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { addCartItem, decreaseQuantity, increaseQuantity, removeCartItem } from '../features/cartSlice';
+import { useDispatch } from 'react-redux';
+import { addCartItem } from '../features/cartSlice';
 import ButtonComponent from './ButtonComponent'
 
 const ProductInfoComponent = ({product}) => {
@@ -24,17 +24,18 @@ const ProductInfoComponent = ({product}) => {
   }
 
   return (
-    <div className='min-h-screen flex flex-col items-center px-10'>
+    <div className='min-h-screen flex flex-col items-center px-10
+    tablet:px-16 palmtop:flex-row palmtop:gap-10 laptop:px-32 laptop:gap-24 '>
       <section className='w-full h-[500px]'>
         <img src={imageUrl} alt={name} className='w-full h-full object-fill'/>
       </section>
-      <article className='flex justify-start w-full py-2 border-secondary-plum-disabled border-b-[1px]'>
-        <div>
-          <h1 className='text-2xl font-extrabold'>{name}</h1>
-          <h3 className='text-xl font-bold text-[#717171]'>&#8358;{price}</h3>
-        </div>
-      </article>
       <section className='w-full flex flex-col gap-4 py-3'>
+        <article className='flex justify-start w-full py-2 border-secondary-plum-disabled border-b-[1px]'>
+          <div>
+            <h1 className='text-2xl font-extrabold'>{name}</h1>
+            <h3 className='text-xl font-bold text-[#717171]'>&#8358;{price}</h3>
+          </div>
+        </article>
         <div>
           <div className='text-lg font-bold flex gap-3 items-center border-secondary-plum-disabled border-b-[1px] py-4'>Available Sizes: {size.map((s, index) => <span key={index} className='text-lg text-[#717171] '>{s}</span>)}</div>
         </div>
@@ -54,8 +55,8 @@ const ProductInfoComponent = ({product}) => {
             <span className='text-xl font-bold'> &#8358;{price * quantity} </span> 
           </div>
         </div>
-        <div className='flex justify-between items-center'>
-          <ButtonComponent buttonType="outlined" onClick={() => dispatch(removeCartItem(productInfo))}>Remove Item</ButtonComponent>
+        <div className='flex justify-between items-center py-2'>
+          <ButtonComponent buttonType="outlined">Save Item</ButtonComponent>
           <ButtonComponent buttonType="contained" onClick={() => dispatch(addCartItem(productInfo))}>{`Add Item${quantity === 1 ? "" : "s"} to cart`}</ButtonComponent>
         </div> 
       </section>

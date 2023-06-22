@@ -12,7 +12,7 @@ const ProductInfo = () => {
   const [product] = useState(incomingProduct)
 
   return (
-    <div className='bg-background-tetiary'>
+    <div className='bg-background-tetiary palmtop:px-10'>
       <ProductInfoComponent product={product}/>
     </div>
   )
