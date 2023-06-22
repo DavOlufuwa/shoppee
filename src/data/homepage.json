@@ -3,18 +3,18 @@
     "id": 1,
     "title": "For Men",
     "imageUrl": "https://source.unsplash.com/b3oyT44E3LE",
-    "slug": "Mens"
+    "slug": "men"
   },
   {
     "id": 2,
     "title": "For Women",
     "imageUrl": "https://source.unsplash.com/-EKIQx3h8Eg",
-    "slug": "Womens"
+    "slug": "women"
   },
   {
     "id": 3,
     "title": "Explore All",
     "imageUrl": "https://source.unsplash.com/nIKCy5CWIzk/",
-    "Slug":"Everyone"
+    "Slug":"en"
   }
 ]

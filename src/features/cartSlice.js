@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 
 const initialState = {
@@ -7,6 +8,9 @@ const initialState = {
   total:0,
   isLoading: true,
 }
+
+
+
 
 const cartSlice = createSlice({
   
@@ -61,7 +65,7 @@ const cartSlice = createSlice({
       state.total = state.cartItems.reduce((total, cartItem)=> total + cartItem.quantity * cartItem.price, 0)
       
     }
-  }
+  }, 
 }) 
 
 export const { addCartItem, removeCartItem, clearCartItem, decreaseQuantity, increaseQuantity, calculateTotalAmount } = cartSlice.actions

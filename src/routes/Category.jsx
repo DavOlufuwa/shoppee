@@ -1,38 +1,24 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom'
-import SHOP_DATA from '../data/shop-data';
 import CircularProgress from '@mui/material/CircularProgress';
 import ProductCardComponent from '../components/ProductCardComponent';
+import axios from 'axios';
 
 
 const Category = () => {
   
   const dispatch = useDispatch();
   const location = useLocation()
-  const category = location.state?.category
-  
-  const [categoryArray, setCategoryArray] = useState([])
   const [loading, setLoading] = useState(true)
+  const category = location.state?.category
+  const {item} = useSelector((state)=> state.shop)
+  const [productArray, setProductArray] = useState(item)
 
-  useEffect(() => {
-    const fetchCategory = () =>{
-      const categoryData = SHOP_DATA.filter((item) => item.title === category);
-    
-      setCategoryArray(categoryData[0]);
-
-      setLoading(false);
-    }
-    fetchCategory();
-
-  },[])
-
-  const {title, items} = categoryArray
-
-  
-
+  // const filteredCategory = productArray.filter(product => product.category.includes(category.toLowerCase()))
+  console.log(productArray)
 
   if(loading){
     return(
@@ -43,15 +29,15 @@ const Category = () => {
     )           
   }
 
-  return (
-    <div className='p-6 grid gap-5 items-center justify-center grid-cols-2 tablet:grid-cols-3 tablet:p-16 laptop:grid-cols-4'>
-      {
-        items.map((item) =>(                  
-          <ProductCardComponent key={item.id} item={item} />
-        ))
-      }
-    </div>
-  )
+  // return (
+  //   <div className='p-6 grid gap-5 items-center justify-center grid-cols-2 tablet:grid-cols-3 tablet:p-16 laptop:grid-cols-4'>
+  //     {
+  //       items.map((item) =>(                  
+  //         <ProductCardComponent key={item.id} item={item} />
+  //       ))
+  //     }
+  //   </div>
+  // )
 }
 
 export default Category

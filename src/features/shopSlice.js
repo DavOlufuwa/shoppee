@@ -1,24 +1,48 @@
-import { createSlice } from "@reduxjs/toolkit";
-import SHOP_DATA from '../data/shop-data';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
+
+const url = "https://fakestoreapi.com/products?limit=10";
 
 
 const initialState = {
-  items: SHOP_DATA,
-  category: null,
+  items: [],
+  isLoading: true,
+  isError: true,
 }
+
+export const axiosCartItems = createAsyncThunk("shop/axiosCartItems", 
+async (name,thunkAPI) => {
+  try{
+    // console.log(thunkAPI.getState())
+    const res = await axios.get(url);
+    return res.data;
+  }
+  catch(err){
+    return thunkAPI.rejectWithValue('something went terribly wrong');
+  }
+})
 
 const shopSlice = createSlice({
   name: "shop",
   initialState,
-  reducers: {
-    searchCart: (state, action) => {
-      state.category = state.items.filter((item) => item.title === action.payload)
+  reducers: { 
+  },
+  extraReducers: {
+    [axiosCartItems.pending]: (state) => {
+      state.isLoading = true;
     },
-    
-  }})
+    [axiosCartItems.fulfilled]: (state, action) => {
+      state.items = action.payload;
+      state.isLoading = false;
+      state.isError = false;
+    },
+    [axiosCartItems.rejected]: (state) => {
+      state.isLoading = true;
+      state.isError = true;
+    }
+  }
 
-
-export const { searchCart } = shopSlice.actions;
+})
 
 export default shopSlice.reducer;

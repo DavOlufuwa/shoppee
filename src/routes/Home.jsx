@@ -1,9 +1,13 @@
+import { CircularProgress } from '@mui/material'
 import React from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import Navigation from '../components/Navigation'
-import Categories from './Categories'
+import { axiosCartItems } from '../features/shopSlice'
 
 const Home = () => {
+
   return (
     <>
       <Navigation/>
@@ -13,6 +17,7 @@ const Home = () => {
     </>
   )
 }
+
 
 
 export default Home

@@ -14,10 +14,10 @@ const Categories = () => {
             </div>
             <div className='title'>{title}</div>
             <div className='button'>
-                <Link
-                  to={"category"}
-                  state={{category: slug}}
-                >
+              <Link
+                to={"category"}
+                state={{category: slug}}
+              >
               <ButtonComponent buttonType="outlined">
                   See All
               </ButtonComponent>
