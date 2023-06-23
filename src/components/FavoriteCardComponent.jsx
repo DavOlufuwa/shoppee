@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { addCartItem } from '../features/cartSlice'
 import { removeItemFromFavorite } from '../features/favoriteSlice'
 
-import RemoveFavorite from '../../public/assets/icons/heart-minus.svg'
+import RemoveFavorite from '/assets/icons/heart-minus.svg'
 
 
 

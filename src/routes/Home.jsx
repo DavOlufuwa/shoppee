@@ -1,13 +1,36 @@
-import { CircularProgress } from '@mui/material'
 import React from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import Navigation from '../components/Navigation'
-import { axiosCartItems } from '../features/shopSlice'
+import { getFromLocalStorage, storeInLocalStorage } from '../features/cartSlice'
+import { getFavoritesFromLocalStorage, storeFavoritesInLocalStorage } from '../features/favoriteSlice'
+
 
 const Home = () => {
+  const dispatch = useDispatch()
 
+  const {cartItems} = useSelector((state)=> state.cart)
+  const {favoriteItems} = useSelector((state)=> state.favorites)
+  
+  useEffect(()=>{
+    dispatch(getFromLocalStorage())
+  }, [])
+
+  useEffect(()=>{
+    dispatch(getFavoritesFromLocalStorage())
+  }, [])
+
+  useEffect(()=>{
+    dispatch(storeInLocalStorage())
+  }, [cartItems])
+  
+  
+  
+  useEffect(()=>{
+    dispatch(storeFavoritesInLocalStorage())
+  }, [favoriteItems])
+  
   return (
     <>
       <Navigation/>

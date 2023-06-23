@@ -2,6 +2,7 @@ import { Rating } from '@mui/material';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addCartItem } from '../features/cartSlice';
+import { addItemToFavorite } from '../features/favoriteSlice';
 import ButtonComponent from './ButtonComponent'
 
 const ProductInfoComponent = ({product}) => {
@@ -79,8 +80,18 @@ const ProductInfoComponent = ({product}) => {
           </div>
         </div>
         <div className='flex justify-between items-center gap-4 py-2'>
-          <ButtonComponent buttonType="outlined">Save Item</ButtonComponent>
-          <ButtonComponent buttonType="contained" onClick={() => dispatch(addCartItem(productInfo))}>{`Add Item${quantity === 1 ? "" : "s"} to cart`}</ButtonComponent>
+          <ButtonComponent 
+            buttonType="outlined"
+            onClick={()=> dispatch(addItemToFavorite(productInfo))}
+          >
+          Save Item
+          </ButtonComponent>
+          <ButtonComponent 
+            buttonType="contained" 
+            onClick={() => dispatch(addCartItem(productInfo))}
+          >
+            {`Add Item${quantity === 1 ? "" : "s"} to cart`}
+            </ButtonComponent>
         </div> 
       </section>
     </div>

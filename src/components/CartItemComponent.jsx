@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { decreaseQuantity, increaseQuantity } from '../features/cartSlice'
+import { decreaseQuantity, increaseQuantity, removeCartItem } from '../features/cartSlice'
+import { addItemToFavorite } from '../features/favoriteSlice'
 import ButtonComponent from './ButtonComponent'
 
 const CartItemComponent = ({product}) => {
@@ -34,8 +35,8 @@ const CartItemComponent = ({product}) => {
         </div>           
       </section>
       <div className='flex justify-between gap-10 mb-3 pt-3 border-secondary-plum-disabled border-t-[1px]'>
-        <ButtonComponent buttonType="outlined" >Remove item</ButtonComponent>
-        <ButtonComponent buttonType="outlined" >Save for later</ButtonComponent>
+        <ButtonComponent buttonType="outlined" onClick={()=>dispatch(removeCartItem(id))}>Remove item</ButtonComponent>
+        <ButtonComponent buttonType="outlined" onClick={()=>dispatch(addItemToFavorite(product))}>Save for later</ButtonComponent>
       </div>
     </div>
   )

@@ -28,10 +28,19 @@ const favoriteSlice = createSlice({
     },
     calculateTotalFavorites: (state) => {
       state.totalFavorites = state.favoriteItems.reduce((total, favoriteItem)=> total + favoriteItem.quantity, 0)    
+    },
+    storeFavoritesInLocalStorage: (state, action) => {
+      localStorage.setItem("savedItems", JSON.stringify(state.favoriteItems))
+    },
+    getFavoritesFromLocalStorage: (state, action) => {
+      const storedFavoriteItems = localStorage.getItem("savedItems");
+      if(storedFavoriteItems){
+        state.favoriteItems = JSON.parse(storedFavoriteItems);
+      } 
     }
   }
 })
 
-export const { addItemToFavorite, removeItemFromFavorite, calculateTotalFavorites } = favoriteSlice.actions;
+export const { addItemToFavorite, removeItemFromFavorite, calculateTotalFavorites, storeFavoritesInLocalStorage, getFavoritesFromLocalStorage} = favoriteSlice.actions;
 
 export default favoriteSlice.reducer;
