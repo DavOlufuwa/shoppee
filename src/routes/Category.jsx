@@ -33,8 +33,7 @@ const Category = () => {
           }
       }
     setProductArray(filteredCategory())
-    setLoading(false)
-    
+    setLoading(false)  
   }, [])
     
   if(loading){

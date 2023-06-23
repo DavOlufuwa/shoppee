@@ -11,7 +11,7 @@ const ProductCardComponent = ({item}) => {
 
   const [singleItem, setSingleItem] = useState({...item, quantity : 1})
 
-  const { id, title, thumbnail, price} = singleItem;
+  const { id, title, images, price} = singleItem;
   
   const dispatch = useDispatch()
 
@@ -19,7 +19,7 @@ const ProductCardComponent = ({item}) => {
     <div className='product-card'>
       <div className='container-block h-[300px]'>
         <img 
-          src={thumbnail} 
+          src={`${images[0]}`} 
           alt={title}
           className='w-full h-full object-cover'
         />
