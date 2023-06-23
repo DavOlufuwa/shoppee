@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector, } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addCartItem } from '../features/cartSlice'
-import { addItemToFavorite } from '../features/favoriteSlice'
-import AddFavorite from '/assets/icons/heart-plus.svg'
+import { removeItemFromFavorite } from '../features/favoriteSlice'
+
+import RemoveFavorite from '../../public/assets/icons/heart-minus.svg'
 
 
 
-
-const ProductCardComponent = ({item}) => {
+const FavoriteCardComponent = ({item}) => {
 
   const [singleItem, setSingleItem] = useState({...item, quantity : 1})
 
@@ -26,7 +26,7 @@ const ProductCardComponent = ({item}) => {
         />
         <div className='button-bar'>
           <Link className='pointer' to="/productinformation" state={{...singleItem}}><i className='material-icons'>visibility</i></Link>
-          <div className='pointer p-3'  onClick={()=> dispatch(addItemToFavorite(singleItem))}><img src={AddFavorite} alt='add to favorite' className=''/></div>
+          <div className='pointer p-3'  onClick={()=> dispatch(removeItemFromFavorite(singleItem))}><img src={RemoveFavorite} alt='remove from favorite' className=''/></div>
           <div className='pointer' onClick={()=>dispatch(addCartItem(singleItem))}><i className='material-icons'>add_shopping_cart</i></div>
         </div>
       </div>
@@ -38,4 +38,4 @@ const ProductCardComponent = ({item}) => {
   )
 }
 
-export default ProductCardComponent
+export default FavoriteCardComponent

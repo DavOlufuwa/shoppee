@@ -16,7 +16,7 @@ const Cart = () => {
         <ButtonComponent 
           buttonType="contained" 
           style={{width: 'max-content'}}
-          onClick={()=>navigate(-1)}
+          onClick={()=>navigate("/")}
 
         >
           Continue Shopping

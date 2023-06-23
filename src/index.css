@@ -41,6 +41,12 @@
     color :#b744b8; 
   }
 
+  .icon-containers{
+    display: flex;
+    justify-content: flex-end;
+    gap:60px
+  }
+
   .cart-icon{
     position: relative;
   }
@@ -54,16 +60,19 @@
     @apply bg-secondary-plum-inactive absolute grid place-content-center font-bold text-primary-brand rounded-full p-1 w-[26px] h-[26px] -top-3 -right-4
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     header{
-      @apply justify-between px-7 py-6
-      
+      @apply justify-between px-6 py-6
     }
-    .cart-icon{
+    
+    .icon-containers{
       position: absolute;
-      right: 120px;
-
+      top: 30px;
+      right: 90px;
+      gap: 30px;
+      width: 120px;
     }
+
     .mobile-btn{
       display: flex;
       @apply border-[1px] border-secondary-plum-hover cursor-pointer;

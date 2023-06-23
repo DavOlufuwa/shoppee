@@ -15,6 +15,7 @@ const favoriteSlice = createSlice({
 
       if (itemExists) {
         alert("Item already exists in favorites")
+        return
       }
 
       state.favoriteItems = [...state.favoriteItems, {...action.payload}]
@@ -25,9 +26,12 @@ const favoriteSlice = createSlice({
       );
       state.totalFavorites -= 1;
     },
+    calculateTotalFavorites: (state) => {
+      state.totalFavorites = state.favoriteItems.reduce((total, favoriteItem)=> total + favoriteItem.quantity, 0)    
+    }
   }
 })
 
-export const { addItemToFavorite, removeItemFromFavorite } = favoriteSlice.actions;
+export const { addItemToFavorite, removeItemFromFavorite, calculateTotalFavorites } = favoriteSlice.actions;
 
 export default favoriteSlice.reducer;
