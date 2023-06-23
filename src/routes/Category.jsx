@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
 import ProductCardComponent from '../components/ProductCardComponent';
-import axios from 'axios';
+
 
 
 const Category = () => {
@@ -14,12 +14,29 @@ const Category = () => {
   const location = useLocation()
   const [loading, setLoading] = useState(true)
   const category = location.state?.category
-  const {item} = useSelector((state)=> state.shop)
-  const [productArray, setProductArray] = useState(item)
+  const {items} = useSelector((store) => store.shop)
+  const [productArray, setProductArray] = useState(items)
+  
+  useEffect(() => {
 
-  // const filteredCategory = productArray.filter(product => product.category.includes(category.toLowerCase()))
-  console.log(productArray)
-
+    const filteredCategory = () => {
+    
+      switch (category) {
+          case 'me':
+            return productArray.filter(product => product.category.startsWith(category.toLowerCase()))
+          case 'wo':
+            return productArray.filter(product => product.category.startsWith(category.toLowerCase()))  
+          case 'ev':
+            return productArray.filter(product => !product.category.startsWith("l") && !product.category.startsWith("ho") && !product.category.startsWith("gr") && !product.category.startsWith("fu") && !product.category.startsWith("sm") && !product.category.startsWith("au") && !product.category.startsWith("mo"))  
+          default:
+            return productArray
+          }
+      }
+    setProductArray(filteredCategory())
+    setLoading(false)
+    
+  }, [])
+    
   if(loading){
     return(
       <div className='w-full min-h-screen flex flex-col gap-4 items-center justify-center'>
@@ -29,15 +46,15 @@ const Category = () => {
     )           
   }
 
-  // return (
-  //   <div className='p-6 grid gap-5 items-center justify-center grid-cols-2 tablet:grid-cols-3 tablet:p-16 laptop:grid-cols-4'>
-  //     {
-  //       items.map((item) =>(                  
-  //         <ProductCardComponent key={item.id} item={item} />
-  //       ))
-  //     }
-  //   </div>
-  // )
+  return (
+    <div className='p-6 grid gap-5 grid-cols-2 tablet:grid-cols-3 tablet:p-16 laptop:grid-cols-4'>
+      {
+        productArray.map((product) =>(                  
+          <ProductCardComponent key={product.id} item={product} />
+        ))
+      }
+    </div>
+  )
 }
 
 export default Category

@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ButtonComponent from '../components/ButtonComponent'
 import homeCategories from '../data/homepage.json'
 
 const Categories = () => {
+  const {item} = useSelector((store) => store.shop)
+
   return (
     <div className='categories-container'>
       {
@@ -16,7 +19,11 @@ const Categories = () => {
             <div className='button'>
               <Link
                 to={"category"}
-                state={{category: slug}}
+                state={
+                  {
+                    category: slug
+                  }
+                }
               >
               <ButtonComponent buttonType="outlined">
                   See All

@@ -11,7 +11,7 @@ const ProductCardComponent = ({item}) => {
 
   const [singleItem, setSingleItem] = useState({...item, quantity : 1})
 
-  const { id, name, imageUrl, price} = singleItem;
+  const { id, title, thumbnail, price} = singleItem;
   
   const dispatch = useDispatch()
 
@@ -19,8 +19,8 @@ const ProductCardComponent = ({item}) => {
     <div className='product-card'>
       <div className='container-block h-[300px]'>
         <img 
-          src={imageUrl} 
-          alt={name}
+          src={thumbnail} 
+          alt={title}
           className='w-full h-full object-cover'
         />
         <div className='button-bar'>
@@ -29,9 +29,9 @@ const ProductCardComponent = ({item}) => {
           <div className='pointer' onClick={()=>dispatch(addCartItem(singleItem))}><i className='material-icons'>add_shopping_cart</i></div>
         </div>
       </div>
-      <div className='h-[px]'>
-        <h2 className='text-[16px] mt-1'>{name}</h2>
-        <p className='text-lg font-medium '> &#8358;{price}</p>
+      <div className='flex items-center py-2'>
+        <h2 className='text-[16px] w-[70%]  lowercase'>{title}</h2>
+        <p className='text-lg font-medium w-[30%] text-right'> &#8358;{price}</p>
       </div>
     </div>
   )

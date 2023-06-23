@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-const url = "https://fakestoreapi.com/products?limit=10";
+const url = "https://dummyjson.com/products?limit=100";
 
 
 const initialState = {
@@ -33,9 +33,9 @@ const shopSlice = createSlice({
       state.isLoading = true;
     },
     [axiosCartItems.fulfilled]: (state, action) => {
-      state.items = action.payload;
       state.isLoading = false;
       state.isError = false;
+      state.items = action.payload.products;
     },
     [axiosCartItems.rejected]: (state) => {
       state.isLoading = true;
@@ -44,5 +44,8 @@ const shopSlice = createSlice({
   }
 
 })
+
+
+export const { searchCart } = shopSlice.actions;
 
 export default shopSlice.reducer;
