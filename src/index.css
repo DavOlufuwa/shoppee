@@ -195,11 +195,11 @@
 }
 
 .counter span:nth-of-type(2){
-  @apply border-y-[1px] py-2 px-3 h-full font-extrabold;
+  @apply border-y-[1px] py-[6px] px-3 h-full font-extrabold;
 }
 .counter span:first-of-type,
 .counter span:last-of-type{
-  @apply border-[1px] p-2 hover:bg-secondary-plum-disabled duration-200 cursor-pointer;
+  @apply border-[1px] p-[6px] hover:bg-secondary-plum-disabled duration-200 cursor-pointer;
 }
 
 .counter span > i {

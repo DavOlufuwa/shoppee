@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Logo  from '/assets/icons/logo-white.svg'
+import FavoriteIcon from '/assets/icons/fi_heart.svg'
 import cartIcon from '/assets/icons/fi_shopping-cart.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
@@ -30,13 +31,24 @@ const Navigation = () => {
         </div>
       </div>
       <nav className={`nav-block ${navOpen ? "open" : " "}`}>      
-        <Link to="/" className="nav-link">Explore</Link>
-        <Link to="/" className="nav-link">Sign Up</Link>
+        <Link to={"category"} 
+        state={{category: "ev"}} className="nav-link">Explore</Link>
+        <Link to={"/"} className="nav-link">Sign Up</Link>
         <Link to="/" className="nav-link">Sign In</Link>
         <Link to="/" className="nav-link">About</Link>
         <Link to="/" className="nav-link">Contact</Link>
       </nav>
-      <div className='cart-icon cursor-pointer'>
+      <div 
+        className='cart-icon cursor-pointer'
+        onClick={() => navigate("cart")}
+      >
+        <img src={FavoriteIcon} alt='saved items icon'/>
+        <div>{quantity}</div>
+      </div>
+      <div 
+        className='cart-icon cursor-pointer'
+        onClick={() => navigate("cart")}
+      >
         <img src={cartIcon} alt='cart icon'/>
         <div>{quantity}</div>
       </div>

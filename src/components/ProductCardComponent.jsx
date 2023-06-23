@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch, } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addCartItem } from '../features/cartSlice'
+import { addItemToFavorite } from '../features/favoriteSlice'
 
 
 
@@ -12,7 +13,7 @@ const ProductCardComponent = ({item}) => {
   const [singleItem, setSingleItem] = useState({...item, quantity : 1})
 
   const { id, title, images, price} = singleItem;
-  
+
   const dispatch = useDispatch()
 
   return (
@@ -25,7 +26,7 @@ const ProductCardComponent = ({item}) => {
         />
         <div className='button-bar'>
           <Link className='pointer' to="/productinformation" state={{...singleItem}}><i className='material-icons'>visibility</i></Link>
-          <div className='pointer'><i className='material-icons'>favorite</i></div>
+          <div className='pointer'  onClick={()=> dispatch(addItemToFavorite(singleItem))}><i className='material-icons'>favorite</i></div>
           <div className='pointer' onClick={()=>dispatch(addCartItem(singleItem))}><i className='material-icons'>add_shopping_cart</i></div>
         </div>
       </div>
