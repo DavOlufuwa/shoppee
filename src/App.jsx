@@ -9,6 +9,9 @@ import Home from './routes/Home'
 import ProductInfo from './routes/ProductInfo'
 import Cart from './routes/Cart'
 import SavedItems from './routes/SavedItems'
+import Authentication from './routes/Authentication'
+import { supabase } from '../utils/supabase'
+
 
 
 const theme = createTheme({
@@ -23,6 +26,7 @@ const router = createBrowserRouter(
       <Route path='productinformation' element={<ProductInfo/>} />
       <Route path='cart' element={<Cart />} />
       <Route path='savedItems' element={<SavedItems />} />
+      <Route path='authentication' element={<Authentication/>} />
     </Route>
   )
 )
