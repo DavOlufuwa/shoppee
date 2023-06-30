@@ -15,7 +15,7 @@ const Cart = () => {
   if(cartItems.length === 0){
     return(
       <div className='w-full min-h-screen flex flex-col gap-4 items-center justify-center'>
-        <p className='text-3xl text-primary-brand font-bold'>You Don't Have Any Items in the Cart</p>
+        <p className='text-3xl text-primary-brand text-center font-bold'>You Don't Have Any Items in the Cart</p>
         <ButtonComponent 
           buttonType="contained" 
           style={{width: 'max-content'}}

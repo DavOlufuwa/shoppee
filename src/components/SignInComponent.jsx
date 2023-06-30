@@ -81,7 +81,6 @@ const SignInComponent = ({closeModal}) => {
     }).then((res) => res.json())
     .then((data) => {
       location.href = data.data.authorization_url;
-      window.close()
     })
   }
 

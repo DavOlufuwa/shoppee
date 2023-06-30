@@ -41,7 +41,6 @@ const Navigation = () => {
       <nav className={`nav-block ${navOpen ? "open" : " "}`}>      
         <Link to={"category"} 
         state={{category: "ev"}} className="nav-link">Explore</Link>
-        <Link to="authentication" className="nav-link">Sign In</Link>
         <Link to="/" className="nav-link">About</Link>
         <Link to="/" className="nav-link">Contact</Link>
       </nav>
