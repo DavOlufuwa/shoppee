@@ -13,7 +13,7 @@ import FormInput from './FormInput'
 const SignInComponent = ({closeModal}) => {
 
   const action = snackBarId => (
-    <button onClick={() => closeSnackbar(snackBarId)}>&#10005;</button>
+    <button onClick={() => closeSnackbar(snackBarId)} className='font-bold'>&#10005;</button>
   )
 
   const {total} = useSelector((state) => state.cart)
@@ -60,7 +60,7 @@ const SignInComponent = ({closeModal}) => {
         email: email,
       })
 
-      enqueueSnackbar('check your email for magic link', {
+      enqueueSnackbar('Please check your email for a verification link', {
         variant: 'info',
         action,
       })

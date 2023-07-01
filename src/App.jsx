@@ -58,10 +58,11 @@ if(isLoading || isError){
       }}
       style={{
         fontSize: '18px',
+        background: '#d48bd5',
         fontWeight : '300',
         color: 'black',
         letterSpacing: '1px',
-        border: '1px solid black',
+        border: '1px solid #4c49b1',
         borderRadius: '0',
         boxShadow: 'none',
       }}
