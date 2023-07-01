@@ -66,6 +66,7 @@ const SignInComponent = ({closeModal}) => {
       })
 
       resetForm()
+      closeModal(false)
           
     } catch (error) {
       alert('There was an error verifying your email')
