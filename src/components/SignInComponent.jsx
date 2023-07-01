@@ -79,7 +79,8 @@ const SignInComponent = ({closeModal}) => {
        }
      }),
     }).then((res) => res.json())
-    .then((data) => {
+    .then(async (data) => {
+      await supabase.auth.signOut()
       location.href = data.data.authorization_url;
     })
   }

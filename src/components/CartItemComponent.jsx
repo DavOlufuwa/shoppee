@@ -11,9 +11,9 @@ const CartItemComponent = ({product}) => {
   const dispatch = useDispatch()
 
   return (
-    <div className='flex flex-col gap-2 border-secondary-plum-disabled border-[1px] px-5 '>
+    <div className='flex flex-col  gap-2 border-secondary-plum-disabled border-[1px] pt-2 px-4 min-w-[340px]'>
       <section className='flex max-h-[200px] gap-6 justify-between '>
-        <div className='flex flex-col w-[150px] gap-2 p-2 mt-2'>
+        <div className='flex flex-col w-[160px] gap-2 p-2 mt-2'>
           <img src={images[0]} alt={title} className='w-full h-full object-contain max-h-[150px]' />
           <p className='text-[14px] text-center'>{title.toLowerCase().replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</p>
         </div>

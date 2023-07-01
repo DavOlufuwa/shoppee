@@ -20,6 +20,10 @@ const Navigation = () => {
 
   const {favoriteItems, totalFavorites} = useSelector((state)=> state.favorites)
 
+  const toggleNavBar = () => {
+    setNavOpen(!navOpen)
+  }
+
   useEffect(()=>{
     dispatch(calculateTotalAmount())
   },[cartItems])
@@ -39,10 +43,31 @@ const Navigation = () => {
         </div>
       </div>
       <nav className={`nav-block ${navOpen ? "open" : " "}`}>      
-        <Link to={"category"} 
-        state={{category: "ev"}} className="nav-link">Explore</Link>
-        <Link to="/" className="nav-link">About</Link>
-        <Link to="/" className="nav-link">Contact</Link>
+        <Link 
+          to={"/category"}
+          state={{
+            category: "ev",
+            categoryTitle: "Explore All"
+          }} 
+          className="nav-link" 
+          onClick={toggleNavBar}
+        >
+          Explore
+        </Link>
+        <Link 
+          to={"savedItems"}
+          className="nav-link" 
+          onClick={toggleNavBar}
+        >
+          Saved Items
+        </Link>
+        <Link 
+          to={"cart"}
+          className="nav-link" 
+          onClick={toggleNavBar}
+        >
+          My Cart
+        </Link>
       </nav>
       <div className='icon-containers'>
         <div 
@@ -62,7 +87,7 @@ const Navigation = () => {
       </div>
       <div 
         className="mobile-btn"
-        onClick={() => setNavOpen(!navOpen)}
+        onClick={toggleNavBar}
       ><i className='material-icons'>expand_more</i>
       </div>
     </header>

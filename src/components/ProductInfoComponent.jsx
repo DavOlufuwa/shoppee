@@ -7,7 +7,6 @@ import ButtonComponent from './ButtonComponent'
 
 const ProductInfoComponent = ({product}) => {
 
-  // const { cartItems } = useSelector((state)=> state.cart)
   const dispatch = useDispatch()
   
   const [productInfo, setProductInfo] = useState(product)
@@ -96,6 +95,7 @@ const ProductInfoComponent = ({product}) => {
       </section>
     </div>
     // Add other products I might like inside the something
+  
   )
 }
 

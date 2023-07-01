@@ -59,7 +59,8 @@
   .cart-icon > div{
     @apply bg-secondary-plum-inactive absolute grid place-content-center font-bold text-primary-brand rounded-full p-1 w-[26px] h-[26px] -top-3 -right-4
   }
-  
+
+
   @media screen and (max-width: 700px) {
     header{
       @apply justify-between px-6 py-6
@@ -109,8 +110,8 @@
   .product-card{
     @apply flex flex-col overflow-hidden;
   }
-  
-  .product-card img{
+    
+  .container-block img{
     @apply w-full max-h-[300px] brightness-90;
   }
   
@@ -123,14 +124,14 @@
     justify-content: center;
     transition: all 0.2s ease;
   }
+
+
   i{
     color: #fff;
     transition: all 0.2s ease;
   }
   
-  .pointer:hover{
-    background-color: #4c49b1;
-  }
+ 
   .pointer:hover i{
     color:#fff;
   }
@@ -146,6 +147,29 @@
   .container-block:hover .button-bar{
     @apply  -translate-y-20;
   }
+
+  .container-block:hover > img{
+    @apply brightness-[45%] duration-300
+  }
+
+  @media(hover:none){
+    .pointer{
+      width: 60px;
+      height: 60px;
+    }
+
+    .pointer i{
+      font-size: 35px;
+    }
+    .button-bar{
+      @apply flex-col h-[90%] pb-5 translate-y-full
+    }
+
+    .container-block:hover .button-bar{
+      @apply -translate-y-full
+    }
+  }
+
 /* Product Component */
 
 /* Form Component */
@@ -160,12 +184,17 @@
 
 /* Categories Container */
 .categories-container{
-  @apply p-4 flex flex-col gap-3 min-h-screen tablet:grid tablet:grid-cols-2 tablet:gap-3 tablet:h-full;
+  @apply p-4 flex flex-col gap-3 min-h-screen tablet:grid tablet:grid-cols-2  tablet:gap-3 tablet:h-full laptop:mx-20 laptop:mt-10;
 }
 
 .category-item{
   @apply relative flex h-[300px] w-full tablet:h-[350px];
 }
+
+.category-item img{
+  @apply brightness-50
+}
+
 .category-item:hover img{
   @apply scale-[1.15] duration-[1.5s] ease-in-out brightness-75 ;
 }
@@ -178,10 +207,17 @@
 }
 
 .category-item .button{
-  @apply absolute top-10 flex items-center justify-center w-full h-full mt-8 
+  @apply  absolute top-10 flex items-center justify-center w-full h-full mt-8 
+}
+
+.category-item .button > button{
+  @apply hover-none:text-primary-brand-disabled
 }
 
 @media (hover:hover)  {
+  .category-item img{
+    @apply brightness-100
+  }
   .category-item .title, 
   .category-item .button{
     @apply opacity-0

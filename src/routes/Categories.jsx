@@ -21,12 +21,13 @@ const Categories = () => {
                 to={"category"}
                 state={
                   {
-                    category: slug
+                    category: slug,
+                    categoryTitle: title
                   }
                 }
               >
-              <ButtonComponent buttonType="outlined">
-                  See All
+              <ButtonComponent className="outlined-btn-one" buttonType="outlined">
+                See All
               </ButtonComponent>
               </Link>
             </div>

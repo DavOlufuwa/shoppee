@@ -39,6 +39,7 @@ export default {
     },
     extend: {
       screens:{
+        'hover-none': {'raw': '(hover: none)'},
         'sharp-nav': {'raw':"(max-width: 1350px)" }
       }
     },
