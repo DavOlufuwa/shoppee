@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { enqueueSnackbar } from "notistack";
 
 
 const initialState = {
@@ -21,24 +22,58 @@ const cartSlice = createSlice({
       
       const itemExists = state.cartItems.find((cartItem) => cartItem.id === action.payload.id)
       
+      // check if item exists
       if(itemExists){
+        
+        // check if the quantity you want to add is greater than that which exists in the cart
+        if(itemExists.quantity < action.payload.quantity){
+
+          itemExists.quantity = itemExists.quantity + action.payload.quantity;
+  
+          enqueueSnackbar(`${action.payload.quantity} ${itemExists.title.toLowerCase()} has been added to cart`, {
+            variant: "info",
+            autoHideDuration: 3000
+          })
+
+          return;
+        }
+
+        enqueueSnackbar(`${itemExists.title.toLowerCase()} quantity has been increased`, {
+          variant: "info",
+          autoHideDuration: 3000
+        })
+
         itemExists.quantity = itemExists.quantity + action.payload.quantity
         return;
       }
-      if(itemExists?.quantity < action.payload.quantity){
-        itemExists.quantity = itemExists.quantity + action.payload.quantity
-      }
-        
+
+      // Freshly added cart item
+      enqueueSnackbar(`${action.payload.title.toLowerCase()} has been added to cart`, {
+        variant: "info",
+        autoHideDuration: 3000
+      })
+
       state.cartItems = [...state.cartItems, {...action.payload}]
             
     },
     removeCartItem:(state, action)=>{
       const id = action.payload
+      
+      enqueueSnackbar(`Item has been removed from cart`, {
+        variant: "info",
+        autoHideDuration: 3000
+      })
+
       state.cartItems = state.cartItems.filter((cartItem) => cartItem.id !== id)
+      
     },
     clearCartItems:(state, action)=>{
+      
+      enqueueSnackbar(`Cart has been emptied`, {
+        variant: "info",
+        autoHideDuration: 3000
+      })
       state.cartItems = []
-      console.log(state.cartItems)
     },
 
     increaseQuantity:(state, action)=>{

@@ -1,3 +1,4 @@
+import { closeSnackbar, enqueueSnackbar } from 'notistack'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
@@ -7,7 +8,13 @@ import ButtonComponent from './ButtonComponent'
 import FormInput from './FormInput'
 
 
+
+
 const SignInComponent = ({closeModal}) => {
+
+  const action = snackBarId => (
+    <button onClick={() => closeSnackbar(snackBarId)}>&#10005;</button>
+  )
 
   const {total} = useSelector((state) => state.cart)
 
@@ -52,12 +59,15 @@ const SignInComponent = ({closeModal}) => {
       const { data, error } = await supabase.auth.signInWithOtp({
         email: email,
       })
-      alert('check your email for magic link')
+
+      enqueueSnackbar('check your email for magic link', {
+        variant: 'info',
+        action,
+      })
+
       resetForm()
-      console.log(data)
           
     } catch (error) {
-      console.log(data)
       alert('There was an error verifying your email')
       alert(error)
     }

@@ -1,4 +1,4 @@
-import { CircularProgress, createTheme, ThemeProvider } from '@mui/material'
+import { CircularProgress } from '@mui/material'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider,} from 'react-router-dom'
@@ -9,13 +9,11 @@ import Home from './routes/Home'
 import ProductInfo from './routes/ProductInfo'
 import Cart from './routes/Cart'
 import SavedItems from './routes/SavedItems'
+import { SnackbarProvider } from 'notistack'
 
 
 
 
-const theme = createTheme({
-
-})
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -52,9 +50,24 @@ if(isLoading || isError){
 
 
   return (
-    <ThemeProvider theme={theme}>
+    <SnackbarProvider
+            maxSnack={3}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'center',
+      }}
+      style={{
+        fontSize: '18px',
+        fontWeight : '300',
+        color: 'black',
+        letterSpacing: '1px',
+        border: '1px solid black',
+        borderRadius: '0',
+        boxShadow: 'none',
+      }}
+    >
       <RouterProvider router={router} />
-    </ThemeProvider>
+    </SnackbarProvider>
   )
 }
 

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { enqueueSnackbar } from "notistack";
 
 const initialState = {
   favoriteItems: [],
@@ -13,14 +14,28 @@ const favoriteSlice = createSlice({
     addItemToFavorite: (state, action) => {
       const itemExists = state.favoriteItems.find((item) => item.id === action.payload.id)
 
+      
       if (itemExists) {
-        alert("Item already exists in favorites")
-        return
+        enqueueSnackbar(`${itemExists.title.toLowerCase()} is already a saved item!}`, {
+          variant: "info",
+          autoHideDuration: 3000
+        })
+        return;
       }
 
+      enqueueSnackbar(`${action.payload.title.toLowerCase()} has been added to favorite`, {
+        variant: "info",
+        autoHideDuration: 3000
+      })
       state.favoriteItems = [...state.favoriteItems, {...action.payload}]
     },
     removeItemFromFavorite: (state, action) => {
+
+      enqueueSnackbar(`Item has been removed from favorite`, {
+        variant: "info",
+        autoHideDuration: 3000
+      })
+
       state.favoriteItems = state.favoriteItems.filter(
         (item) => item.id !== action.payload.id
       );
