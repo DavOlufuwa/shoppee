@@ -12,6 +12,8 @@ import FormInput from './FormInput'
 
 const SignInComponent = ({closeModal}) => {
 
+  
+
   const action = snackBarId => (
     <button onClick={() => closeSnackbar(snackBarId)} className='font-bold'>&#10005;</button>
   )
@@ -60,7 +62,7 @@ const SignInComponent = ({closeModal}) => {
         email: email,
       })
 
-      enqueueSnackbar('Please check your email for a verification link', {
+      enqueueSnackbar('', {
         variant: 'info',
         action,
       })
