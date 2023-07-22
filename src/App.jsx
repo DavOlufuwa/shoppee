@@ -51,7 +51,7 @@ if(isLoading || isError){
 
   return (
     <SnackbarProvider
-            maxSnack={3}
+      maxSnack={3}
       anchorOrigin={{
         vertical: 'top',
         horizontal: 'center',

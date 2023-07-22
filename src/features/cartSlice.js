@@ -1,5 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
 import { enqueueSnackbar } from "notistack";
 
 
@@ -9,9 +8,6 @@ const initialState = {
   total:0,
   isLoading: true,
 }
-
-
-
 
 const cartSlice = createSlice({
   
