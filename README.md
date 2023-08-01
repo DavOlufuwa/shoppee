@@ -1,6 +1,6 @@
 # Shoppee - Online Store
 
-Shoppee is an online store application built using React JS, Redux, Tailwind CSS, React Router v6, and Supabase for authentication. The application also integrates the Paystack API for handling payments. This README.md provides detailed documentation on how to set up and run the Shoppee project using Yarn Vite.
+Shoppee is an online store application built using React JS, Redux, Tailwind CSS, React Router v6, and Supabase for authentication. The application also integrates the Paystack API for handling payments. This README.md provides detailed documentation on how to set up and run the Shoppee project using Yarn and Vite.
 
 ## Installation
 
@@ -24,11 +24,20 @@ yarn install
 ```bash
 yarn add -D tailwindcss postcss autoprefixer
 ```
+4. Initialize Tailwind:
 
-4. Install React Router v6:
+```bash
+yarn tailwindcss init -p
+```
+5. Install React Router v6:
 
 ```bash
 yarn add react-router-dom
+```
+6. Install Redux and Redux Toolkit:
+
+```bash
+yarn add redux @reduxjs/toolkit
 ```
 
 ## Configuration
@@ -43,8 +52,8 @@ The application requires certain configurations to work correctly. Follow the st
 4. Open the `.env` file in the root of the project and set the following environment variables:
 
 ```dotenv
-REACT_APP_SUPABASE_URL=your_supabase_url
-REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
 ### Paystack Integration
@@ -53,7 +62,7 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
 2. Open the `.env` file in the root of the project and set the following environment variable:
 
 ```dotenv
-REACT_APP_PAYSTACK_API_KEY=your_paystack_api_key
+VITE_PAYSTACK_API_KEY=your_paystack_api_key
 ```
 
 ## Running the Application
