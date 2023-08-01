@@ -9,7 +9,7 @@ Before you start, ensure you have Node.js and Yarn installed on your system.
 1. Clone the repository:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/DavOlufuwa/shoppee.git
 cd shoppee
 ```
 
@@ -22,13 +22,13 @@ yarn install
 3. Install Tailwind CSS:
 
 ```bash
-yarn add tailwindcss
+yarn add -D tailwindcss postcss autoprefixer
 ```
 
 4. Install React Router v6:
 
 ```bash
-yarn add react-router@next react-router-dom@next
+yarn add react-router-dom
 ```
 
 ## Configuration
@@ -86,7 +86,7 @@ To serve the production build locally, use:
 yarn serve
 ```
 
-The application should now be running on `http://localhost:5000/`.
+The application should now be running on `http://localhost:5173/`.
 
 ## Conclusion
 
